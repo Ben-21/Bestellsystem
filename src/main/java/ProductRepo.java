@@ -4,10 +4,11 @@ import java.util.Objects;
 
 public class ProductRepo {
 
-    private List<Product> products = new ArrayList<>();
+    private List<Product> products;
 
 
     public ProductRepo(List<Product> products) {
+
         this.products = products;
     }
 

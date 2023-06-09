@@ -20,4 +20,14 @@ public class ShopService {
         return productRepo.list();
     }
 
+    public Order getOrder(String id){
+        return orderRepo.getById(id);
+    }
+
+    public List<Order> listOrder(){
+        return orderRepo.list();
+    }
+
+
+
 }

@@ -42,6 +42,11 @@ public class OrderRepo {
     }
 
 
+    public void add(Order order){
+        orders.add(order);
+    }
+
+
     @Override
     public String toString() {
         return "OrderRepo{" +

@@ -8,6 +8,9 @@ public class Order {
     private List<Product> products = new ArrayList<>();
 
 
+    public Order() {
+    }
+
     public Order(String id, List<Product> products) {
         this.id = id;
         this.products = products;

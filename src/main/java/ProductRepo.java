@@ -12,16 +12,12 @@ public class ProductRepo {
     }
 
 
-    public List<Product> getProducts() {
-        return products;
-    }
-
-    public void setProducts(List<Product> products) {
-        this.products = products;
-    }
 
 
-    public String getByName(String name) {
+
+
+
+    public Product getByName(String name) {
         Product foundProduct = null;
 
         for (Product product : products) {
@@ -30,13 +26,12 @@ public class ProductRepo {
                 break;
             }
         }
-        if (foundProduct != null) {
-            return foundProduct.toString();
-        } else {
-            return "Product not found";
+        if (foundProduct == null) {
+            System.out.println("Product not found");
         }
+        return foundProduct;
     }
-    public String getById(String id) {
+    public Product getById(String id) {
         Product foundProduct = null;
 
         for (Product product : products) {
@@ -45,16 +40,15 @@ public class ProductRepo {
                 break;
             }
         }
-        if (foundProduct != null) {
-            return foundProduct.toString();
-        } else {
-            return "Product not found";
+        if (foundProduct == null) {
+            System.out.println("Product not found");
         }
+        return foundProduct;
     }
 
 
-    public String list(){
-        return products.toString();
+    public List<Product> list(){
+        return products;
     }
 
 

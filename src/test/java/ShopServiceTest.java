@@ -23,8 +23,8 @@ public class ShopServiceTest {
         List<Product> productList2 = new ArrayList<>();
         productList1.add(ball);
 
-        Order order1 = new Order("OR20230001", productList1);
-        Order order2 = new Order("OR20230002", productList2);
+        Order order1 = new Order("OR2023-1", productList1);
+        Order order2 = new Order("OR2023-2", productList2);
 
         List<Order> orderList = new ArrayList<>();
         orderList.add(order1);
@@ -57,8 +57,8 @@ public class ShopServiceTest {
         List<Product> productList2 = new ArrayList<>();
         productList1.add(ball);
 
-        Order order1 = new Order("OR20230001", productList1);
-        Order order2 = new Order("OR20230002", productList2);
+        Order order1 = new Order("OR2023-1", productList1);
+        Order order2 = new Order("OR2023-2", productList2);
 
         List<Order> orderList = new ArrayList<>();
         orderList.add(order1);
@@ -79,7 +79,7 @@ public class ShopServiceTest {
     @Test
     void returnOrderById(){
         //GIVEN
-        String inputId = "OR20230002";
+        String inputId = "OR2023-2";
         Product tv = new Product("1", "TV");
         Product toast = new Product("2", "Toaster");
         Product ball = new Product("3", "Ball");
@@ -92,8 +92,8 @@ public class ShopServiceTest {
         List<Product> productList2 = new ArrayList<>();
         productList1.add(ball);
 
-        Order order1 = new Order("OR20230001", productList1);
-        Order order2 = new Order("OR20230002", productList2);
+        Order order1 = new Order("OR2023-1", productList1);
+        Order order2 = new Order("OR2023-2", productList2);
 
         List<Order> orderList = new ArrayList<>();
         orderList.add(order1);
@@ -125,8 +125,8 @@ public class ShopServiceTest {
         List<Product> productList2 = new ArrayList<>();
         productList1.add(ball);
 
-        Order order1 = new Order("OR20230001", productList1);
-        Order order2 = new Order("OR20230002", productList2);
+        Order order1 = new Order("OR2023-1", productList1);
+        Order order2 = new Order("OR2023-2", productList2);
 
         List<Order> orderList = new ArrayList<>();
         orderList.add(order1);
@@ -141,6 +141,49 @@ public class ShopServiceTest {
 
         //THEN
         Assertions.assertEquals(orderList, actualOrderList);
+    }
+
+
+    @Test
+    void addOrder(){
+        //GIVEN
+
+        Product tv = new Product("1", "TV");
+        Product toast = new Product("2", "Toaster");
+        Product ball = new Product("3", "Ball");
+
+        List<Product> productList1 = new ArrayList<>();
+        productList1.add(tv);
+        productList1.add(toast);
+        ProductRepo productRepo = new ProductRepo(productList1);
+
+        List<Product> productList2 = new ArrayList<>();
+        productList1.add(ball);
+        List<Product> productList3 = new ArrayList<>();
+        productList3.add(toast);
+        productList3.add(tv);
+
+        Order order1 = new Order("OR2023-1", productList1);
+        Order order2 = new Order("OR2023-2", productList2);
+
+        List<Order> orderList = new ArrayList<>();
+        orderList.add(order1);
+        orderList.add(order2);
+        OrderRepo orderRepo = new OrderRepo(orderList);
+
+        ShopService shopService = new ShopService(productRepo, orderRepo);
+
+
+        //WHEN
+        shopService.addOrder(productList3);
+
+
+        //THEN
+        Order expected = orderRepo.getById("OR2023-3");
+        Assertions.assertTrue(shopService.listOrder().contains(expected));
+
+
+
     }
 
 

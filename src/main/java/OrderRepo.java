@@ -12,17 +12,16 @@ public class OrderRepo {
     }
 
 
-    public List<Order> getOrders() {
-        return orders;
-    }
+//    public List<Order> getOrders() {
+//        return orders;
+//    }
+//
+//    public void setOrders(List<Order> orders) {
+//        this.orders = orders;
+//    }
 
-    public void setOrders(List<Order> orders) {
-        this.orders = orders;
-    }
 
-
-
-    public String getById(String id){
+    public Order getById(String id) {
         Order foundOrder = null;
 
         for (Order order : orders) {
@@ -31,15 +30,16 @@ public class OrderRepo {
                 break;
             }
         }
-        if (foundOrder != null) {
-            return foundOrder.toString();
-        } else {
-            return "Order not found";
+        if (foundOrder == null) {
+            System.out.println("Order not found");
         }
+        return foundOrder;
     }
 
 
-
+    public List<Order> list() {
+        return orders;
+    }
 
 
     @Override

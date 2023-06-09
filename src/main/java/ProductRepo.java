@@ -26,12 +26,10 @@ public class ProductRepo {
                 break;
             }
         }
-        if (foundProduct != null) {
-            return foundProduct;
-        } else {
+        if (foundProduct == null) {
             System.out.println("Product not found");
-            return foundProduct;
         }
+        return foundProduct;
     }
     public Product getById(String id) {
         Product foundProduct = null;
@@ -42,12 +40,10 @@ public class ProductRepo {
                 break;
             }
         }
-        if (foundProduct != null) {
-            return foundProduct;
-        } else {
+        if (foundProduct == null) {
             System.out.println("Product not found");
-            return foundProduct;
         }
+        return foundProduct;
     }
 
 

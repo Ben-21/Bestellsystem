@@ -8,7 +8,7 @@ public class ProductRepoTest {
 
 
     @Test
-    void returnProductByName(){
+    void returnProductByName() {
         String inputName = "Toaster";
 
         Product tv = new Product("1", "TV");
@@ -26,9 +26,10 @@ public class ProductRepoTest {
         Assertions.assertEquals(expected, actual);
 
 
+    }
 
-    } @Test
-    void returnProductById(){
+    @Test
+    void returnProductById() {
         String inputId = "1";
 
         Product tv = new Product("1", "TV");
@@ -44,5 +45,23 @@ public class ProductRepoTest {
         String expected = tv.toString();
 
         Assertions.assertEquals(expected, actual);
+    }
+
+
+    @Test
+    void returnListOfAllProducts() {
+        Product tv = new Product("1", "TV");
+        Product toast = new Product("2", "Toaster");
+        List<Product> productList = new ArrayList<>();
+        productList.add(tv);
+        productList.add(toast);
+
+        ProductRepo repo = new ProductRepo(productList);
+
+        String actual = repo.list();
+        String expected = productList.toString();
+
+        Assertions.assertEquals(expected, actual);
+
     }
 }

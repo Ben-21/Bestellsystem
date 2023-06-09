@@ -53,6 +53,11 @@ public class ProductRepo {
     }
 
 
+    public String list(){
+        return products.toString();
+    }
+
+
 
 
 

@@ -65,9 +65,9 @@ public class ProductRepoTest {
         ProductRepo repo = new ProductRepo(productList);
 
         List<Product> actual = repo.list();
-        List<Product> expected = productList;
 
-        Assertions.assertEquals(expected, actual);
+
+        Assertions.assertEquals(productList, actual);
 
     }
 }

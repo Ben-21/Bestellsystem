@@ -10,7 +10,7 @@ public class OrderRepoTest {
     @Test
     void returnOrderById() {
         //GIVEN
-        String input = "OR20230002";
+        String input = "OR2023-2";
 
         Product tv = new Product("1", "TV");
         Product toast = new Product("2", "Toaster");
@@ -21,8 +21,8 @@ public class OrderRepoTest {
         List<Product> productList2 = new ArrayList<>();
         productList1.add(ball);
 
-        Order order1 = new Order("OR20230001", productList1);
-        Order order2 = new Order("OR20230002", productList2);
+        Order order1 = new Order("OR2023-1", productList1);
+        Order order2 = new Order("OR2023-2", productList2);
 
         List<Order> orderList = new ArrayList<>();
         orderList.add(order1);
@@ -52,8 +52,8 @@ public class OrderRepoTest {
         List<Product> productList2 = new ArrayList<>();
         productList1.add(ball);
 
-        Order order1 = new Order("OR20230001", productList1);
-        Order order2 = new Order("OR20230002", productList2);
+        Order order1 = new Order("OR2023-1", productList1);
+        Order order2 = new Order("OR2023-2", productList2);
 
         List<Order> orderList = new ArrayList<>();
         orderList.add(order1);
@@ -83,8 +83,8 @@ public class OrderRepoTest {
         List<Product> productList2 = new ArrayList<>();
         productList1.add(ball);
 
-        Order order1 = new Order("OR20230001", productList1);
-        Order order2 = new Order("OR20230002", productList2);
+        Order order1 = new Order("OR2023-1", productList1);
+        Order order2 = new Order("OR2023-2", productList2);
 
         List<Order> orderList = new ArrayList<>();
         orderList.add(order1);
@@ -97,7 +97,7 @@ public class OrderRepoTest {
 
 
         //THEN
-        Order expected = orderRepo.getById("OR20230002");
+        Order expected = orderRepo.getById("OR2023-2");
         Assertions.assertTrue(orderRepo.list().contains(expected));
 
 

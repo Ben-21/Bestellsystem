@@ -35,9 +35,26 @@ public class ProductRepo {
         } else {
             return "Product not found";
         }
-
-
     }
+    public String getById(String id) {
+        Product foundProduct = null;
+
+        for (Product product : products) {
+            if (product.getId().equals(id)) {
+                foundProduct = product;
+                break;
+            }
+        }
+        if (foundProduct != null) {
+            return foundProduct.toString();
+        } else {
+            return "Product not found";
+        }
+    }
+
+
+
+
 
 
     @Override

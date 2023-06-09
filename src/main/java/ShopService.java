@@ -1,3 +1,5 @@
+import java.util.List;
+
 public class ShopService {
 
     private ProductRepo productRepo;
@@ -12,6 +14,10 @@ public class ShopService {
     public Product getProduct(String id){
 
         return productRepo.getById(id);
+    }
+
+    public List<Product> listProducts(){
+        return productRepo.list();
     }
 
 }

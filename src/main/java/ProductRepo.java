@@ -4,20 +4,19 @@ import java.util.Objects;
 
 public class ProductRepo {
 
+
+    //FIELDS
     private List<Product> products;
 
 
+    //CONSTRUCTOR
     public ProductRepo(List<Product> products) {
 
         this.products = products;
     }
 
 
-
-
-
-
-
+    //METHODS
     public Product getByName(String name) {
         Product foundProduct = null;
 
@@ -32,6 +31,8 @@ public class ProductRepo {
         }
         return foundProduct;
     }
+
+
     public Product getById(String id) {
         Product foundProduct = null;
 
@@ -48,15 +49,12 @@ public class ProductRepo {
     }
 
 
-    public List<Product> list(){
+    public List<Product> list() {
         return products;
     }
 
 
-
-
-
-
+    //FIELD OPERATIONS
     @Override
     public String toString() {
         return "ProductRepo{" +
@@ -72,6 +70,7 @@ public class ProductRepo {
         ProductRepo that = (ProductRepo) o;
         return Objects.equals(products, that.products);
     }
+
 
     @Override
     public int hashCode() {

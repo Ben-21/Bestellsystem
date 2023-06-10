@@ -34,7 +34,6 @@ public class Main {
 
         //WHEN
         shopService.addOrderWithUserInput();
-
     }
 
 

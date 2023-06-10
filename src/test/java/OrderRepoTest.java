@@ -1,7 +1,6 @@
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import javax.swing.plaf.BorderUIResource;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -99,10 +98,5 @@ public class OrderRepoTest {
         //THEN
         Order expected = orderRepo.getById("OR2023-2");
         Assertions.assertTrue(orderRepo.list().contains(expected));
-
-
-
     }
-
-
 }

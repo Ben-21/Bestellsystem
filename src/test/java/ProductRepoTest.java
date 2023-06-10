@@ -27,9 +27,8 @@ public class ProductRepoTest {
         Product expected = toast;
 
         Assertions.assertEquals(expected, actual);
-
-
     }
+
 
     @Test
     void returnProductById() {
@@ -56,6 +55,7 @@ public class ProductRepoTest {
 
     @Test
     void returnListOfAllProducts() {
+        //GIVEN
         Product tv = new Product("1", "TV");
         Product toast = new Product("2", "Toaster");
         List<Product> productList = new ArrayList<>();
@@ -64,10 +64,10 @@ public class ProductRepoTest {
 
         ProductRepo repo = new ProductRepo(productList);
 
+        //WHEN
         List<Product> actual = repo.list();
 
-
+        //THEN
         Assertions.assertEquals(productList, actual);
-
     }
 }

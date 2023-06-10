@@ -4,27 +4,20 @@ import java.util.Objects;
 
 public class OrderRepo {
 
+
+    //FIELDS
     private List<Order> orders;
 
 
-
-
+//CONSTRUCTOR
     public OrderRepo(List<Order> orders) {
         this.orders = orders;
     }
 
 
-//    public List<Order> getOrders() {
-//        return orders;
-//    }
-//
-//    public void setOrders(List<Order> orders) {
-//        this.orders = orders;
-//    }
-
-
+//METHODS
     public Order getById(String id) {
-        Order foundOrder = null;
+       Order foundOrder = null;
 
         for (Order order : orders) {
             if (order.getId().equals(id)) {
@@ -49,6 +42,7 @@ public class OrderRepo {
     }
 
 
+    //FIELD OPERATIONS
     @Override
     public String toString() {
         return "OrderRepo{" +
@@ -64,6 +58,7 @@ public class OrderRepo {
         OrderRepo orderRepo = (OrderRepo) o;
         return Objects.equals(orders, orderRepo.orders);
     }
+
 
     @Override
     public int hashCode() {

@@ -44,10 +44,10 @@ public class ShopServiceTest {
         Assertions.assertEquals(ball, actualProduct);
     }
 
+
     @Test
     void returnListOfProducts() {
         //GIVEN
-
         Product tv = new Product("1", "TV");
         Product toast = new Product("2", "Toaster");
         Product ball = new Product("3", "Ball");
@@ -116,7 +116,6 @@ public class ShopServiceTest {
     @Test
     void returnListOfOrders() {
         //GIVEN
-
         Product tv = new Product("1", "TV");
         Product toast = new Product("2", "Toaster");
         Product ball = new Product("3", "Ball");
@@ -151,7 +150,6 @@ public class ShopServiceTest {
     @Test
     void addOrder() {
         //GIVEN
-
         Product tv = new Product("1", "TV");
         Product toast = new Product("2", "Toaster");
         Product ball = new Product("3", "Ball");
@@ -190,8 +188,6 @@ public class ShopServiceTest {
     @Test
     void addOrderWithUserInput() {
         //GIVEN
-
-
         Product tv = new Product("1", "TV");
         Product toast = new Product("2", "Toaster");
         Product ball = new Product("3", "Ball");
@@ -235,6 +231,4 @@ public class ShopServiceTest {
         Order expected = orderRepo.getById("OR2023-3");
         Assertions.assertTrue(shopService.listOrder().contains(expected));
     }
-
-
 }

@@ -2,36 +2,31 @@ import java.util.Objects;
 
 public class Product {
 
+
+    //FIELDS
     private String id;
     private String name;
 
 
-    public Product() {
-    }
-
+//CONSTRUCTOR
     public Product(String id, String name) {
         this.id = id;
         this.name = name;
     }
 
 
+    //GETTER SETTER
     public String getId() {
         return id;
     }
 
-    public void setId(String id) {
-        this.id = id;
-    }
 
     public String getName() {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
 
-
+//FIELD OPERATIONS
     @Override
     public String toString() {
         return "Product{" +
@@ -48,6 +43,7 @@ public class Product {
         Product product = (Product) o;
         return Objects.equals(id, product.id) && Objects.equals(name, product.name);
     }
+
 
     @Override
     public int hashCode() {

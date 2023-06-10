@@ -4,23 +4,26 @@ import java.util.Objects;
 
 public class Order {
 
+
+    //FIELDS
     private String id;
     private List<Product> products = new ArrayList<>();
 
 
-    public Order() {
-    }
-
+    //CONSTRUCTOR
     public Order(String id, List<Product> products) {
         this.id = id;
         this.products = products;
     }
 
 
+    //GETTER SETTER
     public String getId() {
         return id;
     }
 
+
+    //METHODS
     public void setId(String id) {
         this.id = id;
     }
@@ -34,6 +37,7 @@ public class Order {
     }
 
 
+    //FIELD OPERATIONS
     @Override
     public String toString() {
         return "Order{" +

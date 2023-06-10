@@ -39,6 +39,19 @@ public class ShopService {
 
             Order newOrder = new Order(newOrderId, productList);
             orderRepo.add(newOrder);
+    }
+
+
+    public void addOrderWithUserInput() {
+
+
+            int sizeOfOrderRepo = orderRepo.list().size();
+            int calculateIndex = sizeOfOrderRepo + 1;
+            String newOrderId = "OR" + "2023" + "-" + calculateIndex;
+
+            Order newOrder = new Order(newOrderId, productList);
+            orderRepo.add(newOrder);
+    }
 
 
 
@@ -48,13 +61,5 @@ public class ShopService {
 //
 //        Scanner scanner = new Scanner(System.in);
 //        String firstProductId = scanner.nextLine();
-
-
-
-
-
-
-    }
-
 
 }

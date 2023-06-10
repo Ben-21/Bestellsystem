@@ -32,12 +32,14 @@ public class ShopService {
 
     public void addOrder(List<Product> productList) {
 
-        int sizeOfOrderRepo =  orderRepo.list().size();
-        int calculateIndex = sizeOfOrderRepo + 1;
-        String newOrderId = "OR"+"2023"+"-"+calculateIndex;
 
-        Order newOrder = new Order(newOrderId, productList);
-        orderRepo.add(newOrder);
+            int sizeOfOrderRepo = orderRepo.list().size();
+            int calculateIndex = sizeOfOrderRepo + 1;
+            String newOrderId = "OR" + "2023" + "-" + calculateIndex;
+
+            Order newOrder = new Order(newOrderId, productList);
+            orderRepo.add(newOrder);
+
 
 
 //        System.out.println("Available Products: ");
@@ -46,6 +48,8 @@ public class ShopService {
 //
 //        Scanner scanner = new Scanner(System.in);
 //        String firstProductId = scanner.nextLine();
+
+
 
 
 
